@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aquora - Premium Insulated Tumbler & Hydration Gear</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        aquora: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            200: '#bae6fd',
+                            300: '#7dd3fc',
+                            400: '#38bdf8',
+                            500: '#0284c7',
+                            600: '#0369a1',
+                            700: '#075985',
+                            800: '#0c4a6e',
+                            900: '#0f172a',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 flex flex-col min-h-screen">
+
+    <!-- Header & Navigation -->
+    <header class="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-slate-100 transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Brand Logo -->
+                <a href="#" class="flex items-center gap-2 group">
+                    <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-aquora-600 to-aquora-400 flex items-center justify-center text-white shadow-md shadow-aquora-500/20 group-hover:scale-105 transition-transform">
+                        <i class="fa-solid font-bold text-xl fa-droplet"></i>
+                    </div>
+                    <span class="text-2xl font-extrabold tracking-tight bg-gradient-to-r from-aquora-700 to-aquora-500 bg-clip-text text-transparent">AQUORA</span>
+                </a>
+
+                <!-- Desktop Navigation Links -->
+                <nav class="hidden md:flex items-center gap-8 font-medium text-slate-600 text-sm">
+                    <a href="#hero" class="hover:text-aquora-600 transition-colors">Beranda</a>
+                    <a href="#fitur" class="hover:text-aquora-600 transition-colors">Keunggulan</a>
+                    <a href="#katalog" class="hover:text-aquora-600 transition-colors">Katalog Tumbler</a>
+                    <a href="#testimoni" class="hover:text-aquora-600 transition-colors">Ulasan</a>
+                    <a href="#kontak" class="hover:text-aquora-600 transition-colors">Kontak</a>
+                </nav>
+
+                <!-- Header Actions -->
+                <div class="flex items-center gap-4">
+                    <!-- Cart Button -->
+                    <button id="cart-btn" onclick="toggleCart()" class="relative p-2.5 text-slate-700 hover:text-aquora-600 hover:bg-aquora-50 rounded-full transition-all">
+                        <i class="fa-solid fa-bag-shopping text-xl"></i>
+                        <span id="cart-badge" class="hidden absolute -top-1 -right-1 w-5 h-5 bg-rose-500 text-white text-xs font-bold rounded-full items-center justify-center border-2 border-white">0</span>
+                    </button>
+
+                    <!-- Mobile Menu Button -->
+                    <button id="mobile-menu-btn" onclick="toggleMobileMenu()" class="md:hidden p-2 text-slate-700 hover:text-aquora-600">
+                        <i class="fa-solid fa-bars text-xl" id="menu-icon"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Drawer -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-slate-100 px-4 pt-2 pb-6 space-y-3">
+            <a href="#hero" onclick="toggleMobileMenu()" class="block py-2 text-slate-600 font-medium hover:text-aquora-600">Beranda</a>
+            <a href="#fitur" onclick="toggleMobileMenu()" class="block py-2 text-slate-600 font-medium hover:text-aquora-600">Keunggulan</a>
+            <a href="#katalog" onclick="toggleMobileMenu()" class="block py-2 text-slate-600 font-medium hover:text-aquora-600">Katalog Tumbler</a>
+            <a href="#testimoni" onclick="toggleMobileMenu()" class="block py-2 text-slate-600 font-medium hover:text-aquora-600">Ulasan</a>
+            <a href="#kontak" onclick="toggleMobileMenu()" class="block py-2 text-slate-600 font-medium hover:text-aquora-600">Kontak</a>
+        </div>
+    </header>
+
+    <main class="flex-grow">
+        <!-- Hero Section -->
+        <section id="hero" class="relative overflow-hidden bg-gradient-to-b from-aquora-50/80 via-white to-slate-50 pt-12 pb-20 lg:pt-20 lg:pb-28">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                    <div class="lg:col-span-7 text-center lg:text-left space-y-6">
+                        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-aquora-100/80 text-aquora-800 text-xs sm:text-sm font-semibold border border-aquora-200 shadow-sm">
+                            <span class="w-2 h-2 rounded-full bg-aquora-500 animate-pulse"></span>
+                            Inovasi Thermal Lock™ Terbaru
+                        </div>
+                        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight leading-tight">
+                            Kesegaran Maksimal, <br class="hidden sm:inline"/>
+                            <span class="bg-gradient-to-r from-aquora-600 to-sky-400 bg-clip-text text-transparent">Gaya Tanpa Batas.</span>
+                        </h1>
+                        <p class="text-base sm:text-lg text-slate-600 max-w-2xl mx-auto lg:mx-0 font-normal leading-relaxed">
+                            Nikmati minuman favorit Anda tetap dingin hingga 24 jam atau panas hingga 12 jam. Tumbler higienis, anti bocor, dan bebas BPA yang dirancang untuk gaya hidup aktif Anda.
+                        </p>
+                        <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
+                            <a href="#katalog" class="w-full sm:w-auto px-8 py-4 bg-aquora-600 hover:bg-aquora-700 text-white font-semibold rounded-2xl shadow-lg shadow-aquora-600/30 transition-all transform hover:-translate-y-0.5 text-center">
+                                Jelajahi Koleksi <i class="fa-solid fa-arrow-right ml-2 text-sm"></i>
+                            </a>
+                            <a href="#fitur" class="w-full sm:w-auto px-8 py-4 bg-white hover:bg-slate-50 text-slate-700 border border-slate-200 font-semibold rounded-2xl shadow-sm transition-all text-center">
+                                Pelajari Teknologi
+                            </a>
+                        </div>
+                        
+                        <!-- Trust Badges -->
+                        <div class="pt-8 border-t border-slate-200/60 grid grid-cols-3 gap-4 text-center lg:text-left max-w-lg mx-auto lg:mx-0">
+                            <div>
+                                <p class="text-xl sm:text-2xl font-bold text-slate-900">24 Jam</p>
+                                <p class="text-xs text-slate-500 font-medium">Dingin Sempurna</p>
+                            </div>
+                            <div>
+                                <p class="text-xl sm:text-2xl font-bold text-slate-900">100%</p>
+                                <p class="text-xs text-slate-500 font-medium">Food Grade & BPA Free</p>
+                            </div>
+                            <div>
+                                <p class="text-xl sm:text-2xl font-bold text-slate-900">4.9/5.0</p>
+                                <p class="text-xs text-slate-500 font-medium">Ulasan Pembeli</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Hero Image Banner -->
+                    <div class="lg:col-span-5 relative">
+                        <div class="relative mx-auto w-full max-w-md lg:max-w-none">
+                            <div class="absolute -top-4 -left-4 w-72 h-72 bg-aquora-300/30 rounded-full filter blur-3xl"></div>
+                            <div class="absolute -bottom-4 -right-4 w-72 h-72 bg-sky-300/30 rounded-full filter blur-3xl"></div>
+                            
+                            <div class="relative bg-gradient-to-tr from-aquora-100 to-sky-50 p-6 rounded-3xl border border-white/60 shadow-2xl">
+                                <img src="https://images.unsplash.com/photo-1602143407151-7111542de6e8?auto=format&fit=crop&w=800&q=80" alt="Aquora Stainless Tumbler Premium" class="w-full h-80 sm:h-96 object-cover rounded-2xl shadow-md">
+                                
+                                <!-- Floating Feature Tag -->
+                                <div class="absolute -bottom-6 left-6 right-6 bg-white/95 backdrop-blur-md p-4 rounded-2xl border border-slate-100 shadow-xl flex items-center gap-4">
+                                    <div class="w-12 h-12 rounded-xl bg-aquora-100 text-aquora-600 flex items-center justify-center shrink-0 text-xl">
+                                        <i class="fa-solid fa-snowflake"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold text-slate-900 text-sm">Teknologi Vakum Dinding Ganda</h4>
+                                        <p class="text-xs text-slate-500">Mencegah kondensasi embun di bagian luar</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Value Proposition / Features Section -->
+        <section id="fitur" class="py-20 bg-white border-y border-slate-100">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-2xl mx-auto mb-16">
+                    <h2 class="text-xs font-bold text-aquora-600 uppercase tracking-widest mb-2">Mengapa Aquora?</h2>
+                    <p class="text-3xl font-extrabold text-slate-900 tracking-tight sm:text-4xl">Didesain untuk Menyempurnakan Hari Anda</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- Feature 1 -->
+                    <div class="p-6 rounded-2xl bg-slate-50/80 border border-slate-100 hover:border-aquora-200 transition-all hover:shadow-lg group">
+                        <div class="w-12 h-12 rounded-xl bg-aquora-600 text-white flex items-center justify-center text-xl mb-5 shadow-md shadow-aquora-500/30 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-temperature-arrow-down"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-900 mb-2">Isolasi Suhu Ekstrem</h3>
+                        <p class="text-sm text-slate-600 leading-relaxed">Menjaga minuman es tetap dingin 24 jam dan kopi panas hingga 12 jam penuh.</p>
+                    </div>
+
+                    <!-- Feature 2 -->
+                    <div class="p-6 rounded-2xl bg-slate-50/80 border border-slate-100 hover:border-aquora-200 transition-all hover:shadow-lg group">
+                        <div class="w-12 h-12 rounded-xl bg-aquora-600 text-white flex items-center justify-center text-xl mb-5 shadow-md shadow-aquora-500/30 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-shield-virus"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-900 mb-2">Bahan SS 304 Food Grade</h3>
+                        <p class="text-sm text-slate-600 leading-relaxed">Terbuat dari stainless steel anti karat kelas medis, tidak merubah rasa minuman & bebas BPA.</p>
+                    </div>
+
+                    <!-- Feature 3 -->
+                    <div class="p-6 rounded-2xl bg-slate-50/80 border border-slate-100 hover:border-aquora-200 transition-all hover:shadow-lg group">
+                        <div class="w-12 h-12 rounded-xl bg-aquora-600 text-white flex items-center justify-center text-xl mb-5 shadow-md shadow-aquora-500/30 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-lock"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-900 mb-2">100% Anti Bocor</h3>
+                        <p class="text-sm text-slate-600 leading-relaxed">Sistem penutup dengan seal silikon ganda aman dimasukkan ke dalam tas tanpa rasa khawatir.</p>
+                    </div>
+
+                    <!-- Feature 4 -->
+                    <div class="p-6 rounded-2xl bg-slate-50/80 border border-slate-100 hover:border-aquora-200 transition-all hover:shadow-lg group">
+                        <div class="w-12 h-12 rounded-xl bg-aquora-600 text-white flex items-center justify-center text-xl mb-5 shadow-md shadow-aquora-500/30 group-hover:scale-110 transition-transform">
+                            <i class="fa-solid fa-leaf"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-slate-900 mb-2">Ramah Lingkungan</h3>
+                        <p class="text-sm text-slate-600 leading-relaxed">Kurangi sampah plastik sekali pakai. Pilihan berkelanjutan untuk masa depan bumi yang lebih hijau.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Product Catalog Section -->
+        <section id="katalog" class="py-20 bg-slate-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <!-- Section Header -->
+                <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+                    <div>
+                        <h2 class="text-xs font-bold text-aquora-600 uppercase tracking-widest mb-2">Pilihan Terbaik</h2>
+                        <p class="text-3xl font-extrabold text-slate-900 tracking-tight sm:text-4xl">Katalog Tumbler Aquora</p>
+                    </div>
+                    
+                    <!-- Filters -->
+                    <div class="flex flex-wrap items-center gap-2">
+                        <button onclick="filterCategory('all')" class="filter-btn active-filter px-4 py-2 rounded-xl text-sm font-semibold transition-all bg-aquora-600 text-white shadow-sm" data-category="all">Semua</button>
+                        <button onclick="filterCategory('Active')" class="filter-btn px-4 py-2 rounded-xl text-sm font-semibold transition-all bg-white text-slate-600 hover:bg-slate-100" data-category="Active">Active Sport</button>
+                        <button onclick="filterCategory('Office')" class="filter-btn px-4 py-2 rounded-xl text-sm font-semibold transition-all bg-white text-slate-600 hover:bg-slate-100" data-category="Office">Executive & Office</button>
+                        <button onclick="filterCategory('Mini')" class="filter-btn px-4 py-2 rounded-xl text-sm font-semibold transition-all bg-white text-slate-600 hover:bg-slate-100" data-category="Mini">Compact Series</button>
+                    </div>
+                </div>
+
+                <!-- Product Grid -->
+                <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Products generated dynamically via JS -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonial Section -->
+        <section id="testimoni" class="py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-2xl mx-auto mb-16">
+                    <h2 class="text-xs font-bold text-aquora-600 uppercase tracking-widest mb-2">Kata Mereka</h2>
+                    <p class="text-3xl font-extrabold text-slate-900 tracking-tight sm:text-4xl">Dipercaya Lebih dari 15.000+ Pengguna</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Review 1 -->
+                    <div class="p-6 rounded-2xl bg-slate-50 border border-slate-100 space-y-4">
+                        <div class="flex text-amber-400 gap-1 text-sm">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-slate-600 text-sm leading-relaxed">"Tumbler Aquora HydroFlask Series ini luar biasa! Es batu dari pagi jam 7, pas malam jam 8 masih ada sisanya. Luar biasa tahan dingin."</p>
+                        <div class="flex items-center gap-3 pt-2">
+                            <div class="w-10 h-10 rounded-full bg-aquora-200 text-aquora-800 font-bold flex items-center justify-center text-sm">AD</div>
+                            <div>
+                                <h4 class="font-bold text-slate-900 text-sm">Anisa Dian</h4>
+                                <p class="text-xs text-slate-500">Pekerja Kantoran, Jakarta</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Review 2 -->
+                    <div class="p-6 rounded-2xl bg-slate-50 border border-slate-100 space-y-4">
+                        <div class="flex text-amber-400 gap-1 text-sm">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-slate-600 text-sm leading-relaxed">"Sangat membantu saat workout di gym. Desain matte nya gak licin pas tangan basah, dan sama sekali gak bocor walau ditaruh tidur di tas."</p>
+                        <div class="flex items-center gap-3 pt-2">
+                            <div class="w-10 h-10 rounded-full bg-emerald-200 text-emerald-800 font-bold flex items-center justify-center text-sm">RP</div>
+                            <div>
+                                <h4 class="font-bold text-slate-900 text-sm">Rian Pratama</h4>
+                                <p class="text-xs text-slate-500">Fitness Enthusiast, Bandung</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Review 3 -->
+                    <div class="p-6 rounded-2xl bg-slate-50 border border-slate-100 space-y-4">
+                        <div class="flex text-amber-400 gap-1 text-sm">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-slate-600 text-sm leading-relaxed">"Suka banget sama edisi warna pastelnya! Elegan dan pas dimasukkan ke cup holder mobil. Pengiriman cepat dan paking sangat aman."</p>
+                        <div class="flex items-center gap-3 pt-2">
+                            <div class="w-10 h-10 rounded-full bg-purple-200 text-purple-800 font-bold flex items-center justify-center text-sm">S</div>
+                            <div>
+                                <h4 class="font-bold text-slate-900 text-sm">Siti Nurhaliza</h4>
+                                <p class="text-xs text-slate-500">Mahasiswi, Surabaya</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Newsletter & Promo Banner -->
+        <section class="py-16 bg-gradient-to-r from-aquora-800 to-aquora-600 text-white relative overflow-hidden">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+                <h2 class="text-3xl font-extrabold sm:text-4xl mb-4">Dapatkan Diskon 10% untuk Pesanan Pertama</h2>
+                <p class="text-aquora-100 max-w-xl mx-auto mb-8 text-sm sm:text-base">Berlangganan buletin kami untuk info penawaran eksklusif, peluncuran produk edisi terbatas, dan tips hidrasi.</p>
+                
+                <form onsubmit="handleSubscribe(event)" class="max-w-md mx-auto flex flex-col sm:flex-row gap-3">
+                    <input type="email" placeholder="Masukkan alamat email Anda" required class="flex-grow px-5 py-3.5 rounded-xl text-slate-800 placeholder-slate-400 text-sm focus:outline-none focus:ring-2 focus:ring-white">
+                    <button type="submit" class="px-6 py-3.5 bg-slate-900 hover:bg-slate-800 text-white font-semibold rounded-xl text-sm transition-all shadow-lg">Langganan</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer id="kontak" class="bg-slate-900 text-slate-300 pt-16 pb-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 mb-12">
+                <!-- Brand Info -->
+                <div class="lg:col-span-2 space-y-4">
+                    <div class="flex items-center gap-2">
+                        <div class="w-8 h-8 rounded-lg bg-aquora-500 flex items-center justify-center text-white font-bold">
+                            <i class="fa-solid fa-droplet"></i>
+                        </div>
+                        <span class="text-xl font-extrabold tracking-tight text-white">AQUORA</span>
+                    </div>
+                    <p class="text-slate-400 text-sm leading-relaxed max-w-sm">
+                        Merek tumbler premium terdepan yang menghadirkan inovasi botol minum tahan panas dan dingin untuk gaya hidup modern dan ramah lingkungan.
+                    </p>
+                    <div class="flex items-center gap-4 text-slate-400 pt-2">
+                        <a href="#" class="hover:text-aquora-400 text-lg transition-colors"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="hover:text-aquora-400 text-lg transition-colors"><i class="fa-brands fa-tiktok"></i></a>
+                        <a href="#" class="hover:text-aquora-400 text-lg transition-colors"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="#" class="hover:text-aquora-400 text-lg transition-colors"><i class="fa-brands fa-whatsapp"></i></a>
+                    </div>
+                </div>
+
+                <!-- Navigation Links -->
+                <div>
+                    <h4 class="text-white font-semibold text-sm mb-4">Navigasi</h4>
+                    <ul class="space-y-2.5 text-sm">
+                        <li><a href="#hero" class="hover:text-white transition-colors">Beranda</a></li>
+                        <li><a href="#katalog" class="hover:text-white transition-colors">Katalog Produk</a></li>
+                        <li><a href="#fitur" class="hover:text-white transition-colors">Keunggulan</a></li>
+                        <li><a href="#testimoni" class="hover:text-white transition-colors">Ulasan Pembeli</a></li>
+                    </ul>
+                </div>
+
+                <!-- Product Categories -->
+                <div>
+                    <h4 class="text-white font-semibold text-sm mb-4">Kategori</h4>
+                    <ul class="space-y-2.5 text-sm">
+                        <li><a href="#katalog" onclick="filterCategory('Active')" class="hover:text-white transition-colors">Active Sport Series</a></li>
+                        <li><a href="#katalog" onclick="filterCategory('Office')" class="hover:text-white transition-colors">Executive Office</a></li>
+                        <li><a href="#katalog" onclick="filterCategory('Mini')" class="hover:text-white transition-colors">Compact Travel</a></li>
+                        <li><a href="#katalog" onclick="filterCategory('all')" class="hover:text-white transition-colors">Semua Tumbler</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div>
+                    <h4 class="text-white font-semibold text-sm mb-4">Hubungi Kami</h4>
+                    <ul class="space-y-3 text-sm text-slate-400">
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-location-dot text-aquora-400 mt-1"></i>
+                            <span>Jl. Sudirman No. 88, Jakarta Selatan, Indonesia</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-phone text-aquora-400"></i>
+                            <span>+62 812-3456-7890</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-envelope text-aquora-400"></i>
+                            <span>support@aquora.co.id</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="pt-8 border-t border-slate-800 text-center text-xs text-slate-500">
+                <p>&copy; 2026 Aquora Indonesia. Seluruh hak cipta dilindungi undang-undang.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cart Drawer Modal -->
+    <div id="cart-drawer" class="fixed inset-0 z-50 overflow-hidden pointer-events-none transition-opacity duration-300 opacity-0">
+        <!-- Backdrop -->
+        <div id="cart-backdrop" onclick="toggleCart()" class="absolute inset-0 bg-slate-900/50 backdrop-blur-sm transition-opacity"></div>
+
+        <div class="fixed inset-y-0 right-0 max-w-full flex pl-10">
+            <div id="cart-panel" class="w-screen max-w-md bg-white shadow-2xl flex flex-col transform translate-x-full transition-transform duration-300 ease-in-out pointer-events-auto">
+                <!-- Drawer Header -->
+                <div class="p-6 border-b border-slate-100 flex items-center justify-between">
+                    <div class="flex items-center gap-2">
+                        <i class="fa-solid fa-bag-shopping text-aquora-600 text-xl"></i>
+                        <h3 class="text-lg font-bold text-slate-900">Keranjang Belanja</h3>
+                    </div>
+                    <button onclick="toggleCart()" class="text-slate-400 hover:text-slate-600 p-2">
+                        <i class="fa-solid fa-xmark text-xl"></i>
+                    </button>
+                </div>
+
+                <!-- Cart Items Container -->
+                <div id="cart-items" class="flex-1 overflow-y-auto p-6 space-y-4">
+                    <!-- Dynamic Cart Items -->
+                </div>
+
+                <!-- Drawer Footer -->
+                <div class="p-6 border-t border-slate-100 bg-slate-50 space-y-4">
+                    <div class="flex items-center justify-between text-base font-bold text-slate-900">
+                        <span>Total Pembayaran</span>
+                        <span id="cart-total" class="text-aquora-600">Rp 0</span>
+                    </div>
+                    <p class="text-xs text-slate-500">Pesanan akan diteruskan langsung ke WhatsApp Admin Aquora untuk konfirmasi & pembayaran.</p>
+                    <button onclick="checkoutWhatsApp()" class="w-full py-3.5 bg-emerald-600 hover:bg-emerald-700 text-white font-bold rounded-xl shadow-lg shadow-emerald-600/20 flex items-center justify-center gap-2 transition-all">
+                        <i class="fa-brands fa-whatsapp text-lg"></i>
+                        Beli via WhatsApp
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Product Detail Modal -->
+    <div id="product-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm hidden">
+        <div class="bg-white rounded-3xl max-w-2xl w-full overflow-hidden shadow-2xl relative transform transition-all">
+            <button onclick="closeProductModal()" class="absolute top-4 right-4 z-10 w-9 h-9 bg-white/80 hover:bg-white rounded-full flex items-center justify-center text-slate-500 hover:text-slate-800 transition-colors shadow-sm">
+                <i class="fa-solid fa-xmark text-lg"></i>
+            </button>
+            
+            <div id="modal-content" class="grid grid-cols-1 md:grid-cols-2">
+                <!-- Modal content injected via JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Notification Toast -->
+    <div id="toast" class="fixed bottom-6 right-6 z-50 bg-slate-900 text-white px-5 py-3.5 rounded-2xl shadow-xl flex items-center gap-3 transform translate-y-20 opacity-0 transition-all duration-300 pointer-events-none">
+        <i class="fa-solid fa-circle-check text-emerald-400 text-lg"></i>
+        <span id="toast-message" class="text-sm font-medium">Produk berhasil ditambahkan!</span>
+    </div>
+
+    <!-- JavaScript Logic -->
+    <script>
+        // Data Produk Tumbler Aquora
+        const products = [
+            {
+                id: 1,
+                name: "Aquora Hydro Pro 750ml",
+                category: "Active",
+                price: 249000,
+                originalPrice: 299000,
+                rating: 4.9,
+                reviews: 128,
+                image: "https://images.unsplash.com/photo-1602143407151-7111542de6e8?auto=format&fit=crop&w=600&q=80",
+                badge: "Terlaris",
+                colors: ["#0284c7", "#0f172a", "#10b981"],
+                colorNames: ["Ocean Blue", "Midnight Black", "Emerald Green"],
+                desc: "Tumbler olahraga performa tinggi dengan ketahanan suhu hingga 24 jam. Dilengkapi penutup saringan dan handle fleksibel."
+            },
+            {
+                id: 2,
+                name: "Aquora Minimalist Office 500ml",
+                category: "Office",
+                price: 189000,
+                originalPrice: 229000,
+                rating: 4.8,
+                reviews: 95,
+                image: "https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&w=600&q=80",
+                badge: "Baru",
+                colors: ["#f43f5e", "#64748b", "#e2e8f0"],
+                colorNames: ["Rose Gold", "Slate Grey", "Pure White"],
+                desc: "Desain ramping khas kantoran modern dengan permukaan matte anti gores. Pas untuk segala ukuran cup holder mobil."
+            },
+            {
+                id: 3,
+                name: "Aquora Travel Mug Thermal 380ml",
+                category: "Mini",
+                price: 159000,
+                originalPrice: 199000,
+                rating: 4.7,
+                reviews: 74,
+                image: "https://images.unsplash.com/photo-1517256064527-09c73fc73e38?auto=format&fit=crop&w=600&q=80",
+                badge: "Diskon",
+                colors: ["#d97706", "#0f172a"],
+                colorNames: ["Amber Gold", "Matte Black"],
+                desc: "Cangkir travel vakum khusus penikmat kopi dan teh. Menjaga suhu kopi tetap hangat sempurna sepanjang jam kerja."
+            },
+            {
+                id: 4,
+                name: "Aquora Giant Hydration 1200ml",
+                category: "Active",
+                price: 329000,
+                originalPrice: 389000,
+                rating: 5.0,
+                reviews: 210,
+                image: "https://images.unsplash.com/photo-1589365278144-c9e705f843ba?auto=format&fit=crop&w=600&q=80",
+                badge: "Jumbo",
+                colors: ["#0284c7", "#8b5cf6"],
+                colorNames: ["Deep Sea", "Purple Mist"],
+                desc: "Kapasitas esktra besar 1.2 Liter untuk memenuhi kebutuhan hidrasi seharian penuh tanpa perlu sering mengisi ulang."
+            },
+            {
+                id: 5,
+                name: "Aquora Slim Pocket 350ml",
+                category: "Mini",
+                price: 139000,
+                originalPrice: 169000,
+                rating: 4.8,
+                reviews: 62,
+                image: "https://images.unsplash.com/photo-1523362628745-0c100150b504?auto=format&fit=crop&w=600&q=80",
+                badge: "Ringan",
+                colors: ["#f472b6", "#38bdf8"],
+                colorNames: ["Pastel Pink", "Sky Blue"],
+                desc: "Ukuran mungil, sangat ringan, dan pas masuk ke dalam tas kecil atau pouch wanita. Praktis dibawa bepergian."
+            },
+            {
+                id: 6,
+                name: "Aquora Executive Stainless Steel",
+                category: "Office",
+                price: 279000,
+                originalPrice: 320000,
+                rating: 4.9,
+                reviews: 88,
+                image: "https://images.unsplash.com/photo-1570831739435-660143a59dfe?auto=format&fit=crop&w=600&q=80",
+                badge: "Premium",
+                colors: ["#334155", "#0f172a"],
+                colorNames: ["Titanium", "Obsidian"],
+                desc: "Edisi eksklusif dengan sentuhan bahan stainless brushed anti sidik jari. Mewah untuk rapat dan meja kerja."
+            }
+        ];
+
+        // Cart State
+        let cart = [];
+        let selectedCategory = 'all';
+
+        // Format Currency
+        function formatRupiah(amount) {
+            return new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR', maximumFractionDigits: 0 }).format(amount);
+        }
+
+        // Render Products
+        function renderProducts() {
+            const grid = document.getElementById('product-grid');
+            grid.innerHTML = '';
+
+            const filtered = selectedCategory === 'all' 
+                ? products 
+                : products.filter(p => p.category === selectedCategory);
+
+            filtered.forEach(product => {
+                const card = document.createElement('div');
+                card.className = "bg-white rounded-3xl p-5 border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group";
+                
+                card.innerHTML = `
+                    <div>
+                        <!-- Product Image Box -->
+                        <div class="relative w-full h-64 bg-slate-100 rounded-2xl overflow-hidden mb-5">
+                            <img src="${product.image}" alt="${product.name}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <span class="absolute top-3 left-3 bg-slate-900/80 backdrop-blur-md text-white text-xs font-bold px-3 py-1 rounded-full">
+                                ${product.badge}
+                            </span>
+                            <button onclick="openProductModal(${product.id})" class="absolute bottom-3 right-3 w-10 h-10 bg-white/90 hover:bg-white text-slate-800 rounded-full flex items-center justify-center shadow-md transition-all opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0">
+                                <i class="fa-solid fa-eye text-sm"></i>
+                            </button>
+                        </div>
+
+                        <!-- Product Meta -->
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-xs font-semibold uppercase text-aquora-600 bg-aquora-50 px-2.5 py-1 rounded-lg">${product.category}</span>
+                            <div class="flex items-center gap-1 text-xs text-slate-500">
+                                <i class="fa-solid fa-star text-amber-400"></i>
+                                <span class="font-bold text-slate-800">${product.rating}</span>
+                                <span>(${product.reviews})</span>
+                            </div>
+                        </div>
+
+                        <!-- Product Title -->
+                        <h3 class="font-bold text-slate-900 text-lg mb-2 line-clamp-1 group-hover:text-aquora-600 transition-colors">${product.name}</h3>
+                        <p class="text-xs text-slate-500 line-clamp-2 mb-4 leading-relaxed">${product.desc}</p>
+                    </div>
+
+                    <div>
+                        <!-- Price & Add Action -->
+                        <div class="flex items-center justify-between pt-4 border-t border-slate-100">
+                            <div>
+                                <p class="text-xs text-slate-400 line-through">${formatRupiah(product.originalPrice)}</p>
+                                <p class="text-lg font-extrabold text-slate-900">${formatRupiah(product.price)}</p>
+                            </div>
+                            <button onclick="addToCart(${product.id})" class="p-3 bg-aquora-600 hover:bg-aquora-700 text-white rounded-xl shadow-md shadow-aquora-600/20 transition-all hover:scale-105">
+                                <i class="fa-solid fa-plus text-sm"></i>
+                            </button>
+                        </div>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        // Filter Category Function
+        function filterCategory(cat) {
+            selectedCategory = cat;
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                if (btn.getAttribute('data-category') === cat) {
+                    btn.classList.add('bg-aquora-600', 'text-white', 'shadow-sm');
+                    btn.classList.remove('bg-white', 'text-slate-600');
+                } else {
+                    btn.classList.remove('bg-aquora-600', 'text-white', 'shadow-sm');
+                    btn.classList.add('bg-white', 'text-slate-600');
+                }
+            });
+            renderProducts();
+        }
+
+        // Add to Cart
+        function addToCart(productId) {
+            const product = products.find(p => p.id === productId);
+            const existingItem = cart.find(item => item.id === productId);
+
+            if (existingItem) {
+                existingItem.quantity += 1;
+            } else {
+                cart.push({ ...product, quantity: 1, selectedColor: product.colorNames[0] });
+            }
+
+            updateCartUI();
+            showToast(`"${product.name}" ditambahkan ke keranjang!`);
+        }
+
+        // Update Quantity
+        function updateQuantity(productId, delta) {
+            const item = cart.find(i => i.id === productId);
+            if (item) {
+                item.quantity += delta;
+                if (item.quantity <= 0) {
+                    cart = cart.filter(i => i.id !== productId);
+                }
+            }
+            updateCartUI();
+        }
+
+        // Update Cart UI
+        function updateCartUI() {
+            const badge = document.getElementById('cart-badge');
+            const container = document.getElementById('cart-items');
+            const totalEl = document.getElementById('cart-total');
+
+            const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+            const totalPrice = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+
+            // Update Badge
+            if (totalItems > 0) {
+                badge.innerText = totalItems;
+                badge.classList.remove('hidden');
+                badge.classList.add('flex');
+            } else {
+                badge.classList.add('hidden');
+                badge.classList.remove('flex');
+            }
+
+            // Render Cart Items
+            if (cart.length === 0) {
+                container.innerHTML = `
+                    <div class="text-center py-12 space-y-3">
+                        <div class="w-16 h-16 bg-slate-100 rounded-full flex items-center justify-center mx-auto text-slate-400 text-2xl">
+                            <i class="fa-solid fa-basket-shopping"></i>
+                        </div>
+                        <p class="text-slate-500 font-medium text-sm">Keranjang Anda masih kosong</p>
+                    </div>
+                `;
+            } else {
+                container.innerHTML = cart.map(item => `
+                    <div class="flex gap-4 p-3 rounded-2xl bg-slate-50 border border-slate-100 items-center">
+                        <img src="${item.image}" alt="${item.name}" class="w-16 h-16 object-cover rounded-xl">
+                        <div class="flex-1 min-w-0">
+                            <h4 class="font-bold text-slate-900 text-sm truncate">${item.name}</h4>
+                            <p class="text-xs text-slate-500 mb-1">Warna: ${item.selectedColor}</p>
+                            <p class="text-sm font-extrabold text-aquora-600">${formatRupiah(item.price)}</p>
+                        </div>
+                        <div class="flex items-center gap-2 bg-white border border-slate-200 rounded-lg p-1">
+                            <button onclick="updateQuantity(${item.id}, -1)" class="w-6 h-6 flex items-center justify-center text-slate-600 hover:bg-slate-100 rounded">
+                                <i class="fa-solid fa-minus text-xs"></i>
+                            </button>
+                            <span class="text-xs font-bold px-1">${item.quantity}</span>
+                            <button onclick="updateQuantity(${item.id}, 1)" class="w-6 h-6 flex items-center justify-center text-slate-600 hover:bg-slate-100 rounded">
+                                <i class="fa-solid fa-plus text-xs"></i>
+                            </button>
+                        </div>
+                    </div>
+                `).join('');
+            }
+
+            totalEl.innerText = formatRupiah(totalPrice);
+        }
+
+        // Toggle Cart Modal
+        function toggleCart() {
+            const drawer = document.getElementById('cart-drawer');
+            const panel = document.getElementById('cart-panel');
+            
+            if (drawer.classList.contains('opacity-0')) {
+                drawer.classList.remove('opacity-0', 'pointer-events-none');
+                panel.classList.remove('translate-x-full');
+            } else {
+                drawer.classList.add('opacity-0', 'pointer-events-none');
+                panel.classList.add('translate-x-full');
+            }
+        }
+
+        // Product Quick View Modal
+        function openProductModal(productId) {
+            const product = products.find(p => p.id === productId);
+            const content = document.getElementById('modal-content');
+
+            content.innerHTML = `
+                <div class="p-6 bg-slate-100 flex items-center justify-center">
+                    <img src="${product.image}" alt="${product.name}" class="w-full h-64 object-cover rounded-2xl">
+                </div>
+                <div class="p-6 space-y-4 flex flex-col justify-between">
+                    <div>
+                        <span class="text-xs font-semibold text-aquora-600 bg-aquora-50 px-2.5 py-1 rounded-lg">${product.category}</span>
+                        <h3 class="text-xl font-bold text-slate-900 mt-2">${product.name}</h3>
+                        <p class="text-2xl font-extrabold text-aquora-600 my-2">${formatRupiah(product.price)}</p>
+                        <p class="text-xs text-slate-600 leading-relaxed">${product.desc}</p>
+                    </div>
+
+                    <div class="space-y-4 pt-4 border-t border-slate-100">
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 mb-2">Pilihan Warna:</label>
+                            <div class="flex gap-2">
+                                ${product.colorNames.map((color, idx) => `
+                                    <span class="text-xs px-3 py-1.5 rounded-lg border border-slate-200 bg-slate-50 text-slate-700 font-medium">${color}</span>
+                                `).join('')}
+                            </div>
+                        </div>
+                        <button onclick="addToCart(${product.id}); closeProductModal();" class="w-full py-3.5 bg-aquora-600 hover:bg-aquora-700 text-white font-bold rounded-xl shadow-lg transition-all flex items-center justify-center gap-2">
+                            <i class="fa-solid fa-bag-shopping"></i> Tambah ke Keranjang
+                        </button>
+                    </div>
+                </div>
+            `;
+
+            document.getElementById('product-modal').classList.remove('hidden');
+        }
+
+        function closeProductModal() {
+            document.getElementById('product-modal').classList.add('hidden');
+        }
+
+        // WhatsApp Checkout Integration
+        function checkoutWhatsApp() {
+            if (cart.length === 0) {
+                alert("Keranjang Anda kosong!");
+                return;
+            }
+
+            let phoneNumber = "6281234567890"; // Ganti nomor WhatsApp Toko
+            let message = "Halo Admin Aquora, saya ingin memesan tumbler berikut:\n\n";
+
+            cart.forEach((item, index) => {
+                message += `${index + 1}. *${item.name}*\n   - Warna: ${item.selectedColor}\n   - Jumlah: ${item.quantity}x\n   - Subtotal: ${formatRupiah(item.price * item.quantity)}\n\n`;
+            });
+
+            const totalPrice = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+            message += `*Total Pembayaran: ${formatRupiah(totalPrice)}*\n\nMohon informasi langkah pembayarannya. Terima kasih!`;
+
+            const encodedMessage = encodeURIComponent(message);
+            window.open(`https://wa.me/${phoneNumber}?text=${encodedMessage}`, '_blank');
+        }
+
+        // Toast Notification
+        function showToast(msg) {
+            const toast = document.getElementById('toast');
+            const toastMsg = document.getElementById('toast-message');
+            
+            toastMsg.innerText = msg;
+            toast.classList.remove('translate-y-20', 'opacity-0');
+
+            setTimeout(() => {
+                toast.classList.add('translate-y-20', 'opacity-0');
+            }, 3000);
+        }
+
+        // Mobile Menu Toggle
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+
+        // Subscribe Handler
+        function handleSubscribe(e) {
+            e.preventDefault();
+            showToast("Terima kasih telah berlangganan buletin Aquora!");
+            e.target.reset();
+        }
+
+        // Initialize App
+        document.addEventListener('DOMContentLoaded', () => {
+            renderProducts();
+            updateCartUI();
+        });
+    </script>
+</body>
+</html>
